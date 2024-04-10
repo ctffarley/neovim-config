@@ -13,4 +13,7 @@ vim.opt.encoding = 'utf-8'
 
 vim.g.mapleader = ' '
 
+vim.opt.undofile = true
+vim.opt.undodir = os.getenv 'HOME' .. '/.vim/undodir'
+
 -- vim.keymap.set('n', '<leader>nh', ':nohl<CR>', {})
