@@ -1,4 +1,4 @@
-vim.cmd 'syntax on'
+-- vim.cmd 'syntax on'
 
 vim.opt.expandtab = true
 vim.opt.termguicolors = true
@@ -17,3 +17,9 @@ vim.opt.undofile = true
 vim.opt.undodir = os.getenv 'HOME' .. '/.vim/undodir'
 
 -- vim.keymap.set('n', '<leader>nh', ':nohl<CR>', {})
+
+vim.cmd [[silent! autocmd! filetypedetect BufRead,BufNewFile *.tf]]
+vim.cmd [[autocmd BufRead,BufNewFile *.hcl set filetype=hcl]]
+vim.cmd [[autocmd BufRead,BufNewFile .terraformrc,terraform.rc set filetype=hcl]]
+vim.cmd [[autocmd BufRead,BufNewFile *.tf,*.tfvars set filetype=terraform]]
+vim.cmd [[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=json]]
