@@ -242,8 +242,8 @@ require('lazy').setup({
     'lewis6991/gitsigns.nvim',
     opts = {
       signs = {
-        add = { text = '+' },
-        change = { text = '~' },
+        add = { text = '┃' },
+        change = { text = '┃' },
         delete = { text = '_' },
         topdelete = { text = '‾' },
         changedelete = { text = '~' },
@@ -444,6 +444,7 @@ require('lazy').setup({
       --    That is to say, every time a new file is opened that is associated with
       --    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
       --    function will be executed to configure the current buffer
+
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
@@ -515,6 +516,13 @@ require('lazy').setup({
               callback = vim.lsp.buf.clear_references,
             })
           end
+          local signs = { Error = '󰅚 ', Warn = '󰀪 ', Hint = '󰌶 ', Info = ' ' }
+
+          -- Pretty diagnostic signs
+          for type, icon in pairs(signs) do
+            local hl = 'DiagnosticSign' .. type
+            vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+          end
         end,
       })
 
@@ -534,9 +542,18 @@ require('lazy').setup({
       --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
+      local util = require 'lspconfig.util'
       local servers = {
         -- clangd = {},
-        gopls = {},
+        gopls = {
+          root_dir = util.root_pattern('go.work', 'go.mod', '.git'),
+          settings = {
+            gopls = {
+              completeUnimported = true,
+              usePlaceholders = true,
+            },
+          },
+        },
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
