@@ -593,6 +593,9 @@ require('lazy').setup({
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
 
+      -- nice symbols
+      'onsails/lspkind.nvim',
+
       -- If you want to add a bunch of pre-configured snippets,
       --    you can use this plugin to help you. It even has snippets
       --    for various frameworks/libraries/etc. but you will have to
@@ -603,6 +606,7 @@ require('lazy').setup({
       -- See `:help cmp`
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
+      local lspkind = require 'lspkind'
       luasnip.config.setup {}
 
       cmp.setup {
@@ -660,6 +664,9 @@ require('lazy').setup({
         window = {
           completion = cmp.config.enable,
           documentation = cmp.config.enable,
+        },
+        formatting = {
+          format = lspkind.cmp_format(),
         },
       }
     end,
