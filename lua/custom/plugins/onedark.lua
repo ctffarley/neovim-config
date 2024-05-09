@@ -1,6 +1,10 @@
 return {
-  "navarasu/onedark.nvim",
+  'gnoLLex/onedark.nvim',
   config = function()
-    vim.cmd.colorscheme "onedark"
-  end
+    require('onedark').setup {
+      toggle_style_key = '<leader>ts', -- keybind to toggle theme style.
+      toggle_style_list = { 'dark', 'light' },
+    }
+    require('onedark').load()
+  end,
 }
