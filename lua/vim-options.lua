@@ -12,6 +12,13 @@ vim.opt.encoding = 'utf-8'
 vim.opt.undofile = true
 vim.opt.undodir = os.getenv 'HOME' .. '/.vim/undodir'
 
+vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile', 'BufWinEnter' }, {
+  pattern = { '*.tf', '*.tfvars' },
+  callback = function()
+    print 'terraform file'
+  end,
+})
+
 vim.cmd [[silent! autocmd! filetypedetect BufRead,BufNewFile *.tf]]
 vim.cmd [[autocmd BufRead,BufNewFile *.hcl set filetype=hcl]]
 vim.cmd [[autocmd BufRead,BufNewFile .terraformrc,terraform.rc set filetype=hcl]]
