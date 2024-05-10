@@ -12,6 +12,10 @@ vim.opt.encoding = 'utf-8'
 vim.opt.undofile = true
 vim.opt.undodir = os.getenv 'HOME' .. '/.vim/undodir'
 
+-- send current file name to terminal to set title
+-- see :help 'title'
+vim.opt.title = true
+
 vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile', 'BufWinEnter' }, {
   pattern = { '*.tf', '*.tfvars' },
   callback = function()
