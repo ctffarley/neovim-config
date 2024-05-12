@@ -1,3 +1,3 @@
 return {
-  'gnoLLex/one.nvim',
+  'navarasu/onedark.nvim',
 }
