@@ -9,6 +9,8 @@ vim.opt.relativenumber = true
 -- force utf-8
 vim.opt.encoding = 'utf-8'
 
+vim.opt.ruler = false
+
 vim.opt.undofile = true
 vim.opt.undodir = os.getenv 'HOME' .. '/.vim/undodir'
 
