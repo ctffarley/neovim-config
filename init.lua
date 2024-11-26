@@ -285,6 +285,10 @@ require('lazy').setup({
         builtin.find_files { cwd = utils.buffer_dir() }
       end
 
+      local buffers = function()
+        builtin.buffers { ignore_current_buffer = true, sort_last_used = true }
+      end
+
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
       vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
       vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
@@ -294,7 +298,7 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-      vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+      vim.keymap.set('n', '<CR>', buffers, { desc = '[ ] Find existing buffers' })
       vim.keymap.set('n', '<leader>sz', curr_buff_files, { desc = 'Search filenames in buffer dir' })
 
       -- Slightly advanced example of overriding default behavior and theme
