@@ -16,15 +16,10 @@ return {
     end,
     set_light_mode = function()
       vim.o.background = 'light'
-      require('flow').setup {
-        dark_theme = false,
-        transparent = false,
-        high_contrast = false,
-        fluo_color = 'pink',
-        mode = 'base',
-        aggressive_spell = false,
+      require('onedark').setup {
+        style = 'light',
       }
-      vim.cmd 'colorscheme flow'
+      vim.cmd 'colorscheme onedark'
     end,
     fallback = 'dark',
   },
