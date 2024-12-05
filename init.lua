@@ -286,7 +286,7 @@ require('lazy').setup({
       end
 
       local buffers = function()
-        builtin.buffers { ignore_current_buffer = true, sort_last_used = true }
+        builtin.buffers { ignore_current_buffer = true, sort_lastused = true }
       end
 
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
