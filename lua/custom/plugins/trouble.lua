@@ -3,6 +3,7 @@ return {
 
   opts = {
     auto_close = true,
+    focus = true,
   },
 
   cmd = 'Trouble',
