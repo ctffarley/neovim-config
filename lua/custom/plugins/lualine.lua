@@ -24,7 +24,7 @@ return {
         lualine_x = { { '%=', color = 'Normal' } },
         lualine_y = { { 'filetype', 'progress' } },
         lualine_z = {
-          { 'location', separator = { right = '' }, padding = 0 },
+          { 'location', separator = { right = '' }, padding = { left = 1, right = 0 } },
         },
       },
       inactive_sections = {
