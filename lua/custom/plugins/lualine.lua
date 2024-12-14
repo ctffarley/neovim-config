@@ -19,7 +19,10 @@ return {
             padding = { left = 0, right = 1 },
           },
         },
-        lualine_b = { 'filename', 'branch' },
+        lualine_b = { 'filename', 'branch', {
+          'diagnostics',
+          sources = { 'nvim_workspace_diagnostic' },
+        } },
         lualine_c = { { '%=', color = 'Normal' } },
         lualine_x = { { '%=', color = 'Normal' } },
         lualine_y = { { 'filetype', 'progress' } },
