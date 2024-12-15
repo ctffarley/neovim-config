@@ -1,8 +1,7 @@
 return {
-  -- Calls `require('slimline').setup({})`
-  'sschleemilch/slimline.nvim',
+  'ctffarley/slimline.nvim',
   dependencies = {
     { 'echasnovski/mini.icons', version = '*' },
   },
-  opts = {},
+  opts = { workspace_diagnostics = true },
 }
