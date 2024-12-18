@@ -1,5 +1,5 @@
 return {
-  'ctffarley/slimline.nvim',
+  'sschleemilch/slimline.nvim',
   dependencies = {
     { 'echasnovski/mini.icons', version = '*' },
   },
