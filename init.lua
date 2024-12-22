@@ -64,13 +64,16 @@ vim.opt.rtp:prepend(lazypath)
 
 -- [[ Configure and install plugins ]]
 require('lazy').setup {
-  require 'kickstart.plugins.debug',
-
-  -- automatically check for plugin updates
-  checker = { enabled = true },
+  -- require 'kickstart.plugins.debug',
 
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
-  { import = 'custom.plugins' },
+  spec = {
+    { import = 'custom.plugins' },
+    { import = 'kickstart.plugins.debug' },
+  },
+  -- automatically check for plugin updates
+
+  checker = { enabled = true, notify = false },
 }
 
 require 'vim-options'
