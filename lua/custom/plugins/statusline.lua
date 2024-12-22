@@ -21,6 +21,15 @@ return {
         end,
       },
     },
+    spaces = {
+      left = '',
+      right = '',
+    },
+    hl = {
+      modes = {
+        visual = 'CursorLineNr',
+      },
+    },
     workspace_diagnostics = true,
   },
 }
