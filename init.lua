@@ -66,6 +66,9 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup {
   require 'kickstart.plugins.debug',
 
+  -- automatically check for plugin updates
+  checker = { enabled = true },
+
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
   { import = 'custom.plugins' },
 }
