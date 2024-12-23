@@ -5,6 +5,8 @@
     - (or HTML version): https://neovim.io/doc/user/lua-guide.html
 --]]
 
+require 'vim-options'
+
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -73,10 +75,7 @@ require('lazy').setup {
   },
   -- automatically check for plugin updates
 
-  checker = { enabled = true, notify = false },
+  checker = { enabled = false, notify = false },
 }
-
-require 'vim-options'
-
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
