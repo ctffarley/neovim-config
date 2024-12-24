@@ -75,7 +75,7 @@ require('lazy').setup {
   },
   -- automatically check for plugin updates
 
-  checker = { enabled = false, notify = false },
+  checker = { enabled = true, notify = false },
 }
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
