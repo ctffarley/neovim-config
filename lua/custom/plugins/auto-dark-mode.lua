@@ -5,12 +5,16 @@ return {
     set_dark_mode = function()
       vim.o.background = 'dark'
       require('flow').setup {
-        dark_theme = true,
-        transparent = false,
-        high_contrast = true,
-        fluo_color = 'pink',
-        mode = 'bright',
-        aggressive_spell = false,
+        theme = {
+          style = 'dark',
+          contrast = 'high',
+        },
+        colors = {
+          mode = 'bright',
+        },
+        ui = {
+          borders = 'fluo',
+        },
       }
       vim.cmd 'colorscheme flow'
     end,
