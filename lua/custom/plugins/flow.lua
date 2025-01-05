@@ -1,8 +1,6 @@
 return {
-  -- '0xstepit/flow.nvim',
-  dir = '~/code/flow.nvim-clark/',
+  '0xstepit/flow.nvim',
   lazy = false,
   priority = 1000,
-  -- commit = 'c81903a',
-  -- version = '^v2.0.0',
+  version = '^v2.0.0',
 }

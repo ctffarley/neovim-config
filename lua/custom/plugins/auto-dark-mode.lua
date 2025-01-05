@@ -10,7 +10,10 @@ return {
           contrast = 'high',
         },
         colors = {
-          mode = 'bright',
+          custom = {
+            saturation = '80',
+            light = '75',
+          },
         },
         ui = {
           borders = 'fluo',
