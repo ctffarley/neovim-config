@@ -4,6 +4,16 @@ return {
     { 'echasnovski/mini.icons', version = '*' },
   },
   opts = {
+    configs = {
+      diagnostics = {
+        workspace = true,
+      },
+      modes = {
+        hl = {
+          visual = 'CursorLineNr',
+        },
+      },
+    },
     components = { -- Choose components and their location
       left = {
         'mode',
@@ -25,11 +35,5 @@ return {
       left = '',
       right = '',
     },
-    hl = {
-      modes = {
-        visual = 'CursorLineNr',
-      },
-    },
-    workspace_diagnostics = true,
   },
 }
