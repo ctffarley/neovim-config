@@ -8,7 +8,7 @@ return {
       diagnostics = {
         workspace = true,
       },
-      modes = {
+      mode = {
         hl = {
           visual = 'CursorLineNr',
         },
@@ -20,11 +20,11 @@ return {
         'path',
         'git',
         function()
-          local h = require 'slimline.highlights'
-          local c = require('slimline').config
+          -- local h = require 'slimline.highlights'
+          -- local c = require('slimline').config
           if require('lazy.status').has_updates() then
             local text = require('lazy.status').updates()
-            return h.hl_component({ primary = text }, h.hls.component, c.sep)
+            return text
           else
             return ''
           end
