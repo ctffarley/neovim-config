@@ -14,10 +14,9 @@ return {
         },
       },
     },
-    components = { -- Choose components and their location
+    components = {
       left = {
         'mode',
-        'path',
         'git',
         function()
           if require('lazy.status').has_updates() then
