@@ -20,8 +20,6 @@ return {
         'path',
         'git',
         function()
-          -- local h = require 'slimline.highlights'
-          -- local c = require('slimline').config
           if require('lazy.status').has_updates() then
             local text = require('lazy.status').updates()
             return text
