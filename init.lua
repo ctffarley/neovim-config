@@ -43,6 +43,9 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '<space>x', ':.lua<CR>', { desc = 'E[x]ecute current line in lua' })
 vim.keymap.set('v', '<space>x', ':lua<CR>', { desc = 'E[x]ecute currently highlighted lua' })
 
+-- Copy to system clipboard
+vim.keymap.set({ 'n', 'v', 'x' }, '<leader>y', '"*y', { desc = 'yank to system clipboard' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
